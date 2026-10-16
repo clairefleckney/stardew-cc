@@ -29,12 +29,12 @@ CREATE TABLE IF NOT EXISTS `quality` (
 );
 
 CREATE TABLE IF NOT EXISTS `bundle_items` (
+  `id` int PRIMARY KEY AUTO_INCREMENT,
   `bundle_id` int NOT NULL,
   `item_id` int NOT NULL,
   `qual_id` int NOT NULL,
   `qty` int,
-  `done` bool DEFAULT 0,
-  PRIMARY KEY (`bundle_id`, `item_id`)
+  `done` bool DEFAULT 0
 );
 
 ALTER TABLE `room_bundles` ADD FOREIGN KEY (`room_id`) REFERENCES `rooms` (`id`);
